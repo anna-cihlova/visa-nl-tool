@@ -1,0 +1,21 @@
+.appContainer:global(:has(.v-nav .v-tabs)) {
+  grid-template-columns: 242px 1fr;
+}
+
+.layoutContainer {
+  min-block-size: 700px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.mainContent {
+  background-color: whitesmoke;
+  min-block-size: 300px;
+  padding: 12px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.navigation {
+  background-color: lightgrey;
+}
