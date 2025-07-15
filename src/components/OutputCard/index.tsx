@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.scss";
 import {
   Button,
   ContentCard,
@@ -15,7 +15,7 @@ export const OutputCard = ({
   suggestedComponents,
   selectedComponents,
   setSelectedComponents,
-  getCodeSnippet,
+  setCodeSnippet,
   generateCode,
   codeSnippet,
   handleSave,
@@ -28,7 +28,7 @@ export const OutputCard = ({
             suggestedComponents={suggestedComponents}
             selectedComponents={selectedComponents}
             setSelectedComponents={setSelectedComponents}
-            getCodeSnippet={getCodeSnippet}
+            setCodeSnippet={setCodeSnippet}
             generateCode={generateCode}
           />
           <div>

@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.scss";
 import { Badge, Button, Utility } from "@visa/nova-react";
 import { VisaCopyTiny, VisaSuccessTiny } from "@visa/nova-icons-react";
 import { useState } from "react";

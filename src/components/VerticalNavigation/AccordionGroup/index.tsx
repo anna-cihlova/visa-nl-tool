@@ -1,5 +1,4 @@
-import "./styles.css";
-
+import "./styles.scss";
 import {
   Accordion,
   AccordionHeading,

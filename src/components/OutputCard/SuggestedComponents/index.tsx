@@ -1,11 +1,11 @@
-import "./styles.css";
+import "./styles.scss";
 import { Checkbox, Chip, Typography, Utility } from "@visa/nova-react";
 
 export const SuggestedComponents = ({
   suggestedComponents,
   selectedComponents,
   setSelectedComponents,
-  getCodeSnippet,
+  setCodeSnippet,
   generateCode,
 }: any) => {
   const id = "selection-group-chip";
@@ -28,7 +28,7 @@ export const SuggestedComponents = ({
                   ? selectedComponents.filter((c: string) => c !== comp)
                   : [...selectedComponents, comp];
                 setSelectedComponents(updatedSelection);
-                getCodeSnippet(generateCode(updatedSelection));
+                setCodeSnippet(generateCode(updatedSelection));
               }}
               checked={selectedComponents.includes(comp)}
             >

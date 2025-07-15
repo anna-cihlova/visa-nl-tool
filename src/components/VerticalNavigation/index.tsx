@@ -1,6 +1,5 @@
+import "./styles.scss";
 import { useState } from "react";
-import "./styles.css";
-
 import {
   VisaMediaFastForwardTiny,
   VisaMediaRewindTiny,
