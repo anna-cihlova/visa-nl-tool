@@ -1,0 +1,9 @@
+.accordion-heading {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}

@@ -16,7 +16,7 @@ export const SuggestedComponents = ({
         Suggested Components
       </Typography>
       <ul className="output-content suggested-components">
-        <Utility vFlex vFlexWrap vGap={8} style={{ inlineSize: "50%" }}>
+        <Utility vFlex vFlexWrap vGap={8} style={{ height: "fit-content" }}>
           {suggestedComponents.map((comp: string, i: number) => (
             <Chip
               chipType="selection"

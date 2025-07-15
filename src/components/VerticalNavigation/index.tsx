@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 import {
   VisaMediaFastForwardTiny,
@@ -10,62 +11,33 @@ import {
   Link,
   Nav,
   NavAppName,
-  Tab,
-  Tabs,
   Typography,
   Utility,
   UtilityFragment,
   VisaLogo,
 } from "@visa/nova-react";
-import Styles from "./styles.module.css";
+import { AccordionGroup } from "./AccordionGroup";
 
 const id = "vertical-navigation";
 const navRegionAriaLabel = "Vertical navigation";
 
-const tabsContent = [
-  {
-    tabLabel: "L1 label 1",
-    id: `${id}-tab-0`,
-    href: "./vertical-navigation",
-  },
-  {
-    tabLabel: "L1 label 2",
-    id: `${id}-tab-1`,
-    href: "./vertical-navigation",
-  },
-  {
-    tabLabel: "L1 label 3",
-    id: `${id}-tab-2`,
-    href: "./vertical-navigation",
-  },
-  {
-    tabLabel: "L1 label 4",
-    id: `${id}-tab-3`,
-    href: "./vertical-navigation",
-  },
-  {
-    tabLabel: "L1 label 5",
-    id: `${id}-tab-4`,
-    href: "./vertical-navigation",
-  },
-];
-
 type VerticalNavigationProps = {
   children?: React.ReactNode;
+  savedSnippets: { title: string; code: string }[];
+  handleDelete: (index: number) => void;
 };
 
-export const VerticalNavigation = ({ children }: VerticalNavigationProps) => {
+export const VerticalNavigation = ({
+  children,
+  savedSnippets,
+  handleDelete,
+}: VerticalNavigationProps) => {
   const [navExpanded, setNavExpanded] = useState(true);
 
   return (
-    <div className={Styles.appContainer}>
-      <div id="layout" className={Styles.layoutContainer}>
-        <Nav
-          id={id}
-          orientation="vertical"
-          tag="header"
-          className={Styles.navigation}
-        >
+    <div className="appContainer">
+      <div id="layout" className="layoutContainer">
+        <Nav id={id} orientation="vertical" tag="header" className="navigation">
           {navExpanded && (
             <Link skipLink href="#content">
               Skip to content
@@ -82,37 +54,27 @@ export const VerticalNavigation = ({ children }: VerticalNavigationProps) => {
                 vMarginBottom={30}
                 vMarginLeft={20}
               >
-                <Link
-                  aria-label="Visa Application Name Home"
-                  href="https://www.visa.com"
-                  id={`${id}-home-link`}
-                  noUnderline
-                  style={{ backgroundColor: "transparent" }}
-                >
-                  <VisaLogo width={54} />
-                  <NavAppName>
-                    <Typography variant="subtitle-1">
-                      Product Design System Generator
-                    </Typography>
-                  </NavAppName>
-                </Link>
+                <div>
+                  <Link
+                    aria-label="Visa Application Name Home"
+                    href="https://www.visa.com"
+                    id={`${id}-home-link`}
+                    noUnderline
+                    className="link-logo"
+                  >
+                    <VisaLogo width={54} />
+                    <NavAppName>
+                      <Typography variant="subtitle-1">UI Generator</Typography>
+                    </NavAppName>
+                  </Link>
+                </div>
               </UtilityFragment>
               <nav aria-label={navRegionAriaLabel}>
                 <UtilityFragment vGap={8}>
-                  <Tabs orientation="vertical">
-                    {tabsContent.map((tabContent) => (
-                      <Tab key={tabContent.id}>
-                        <Button
-                          colorScheme="tertiary"
-                          element={
-                            <a href="./vertical-navigation">
-                              {tabContent.tabLabel}
-                            </a>
-                          }
-                        />
-                      </Tab>
-                    ))}
-                  </Tabs>
+                  <AccordionGroup
+                    savedSnippets={savedSnippets}
+                    handleDelete={handleDelete}
+                  />
                 </UtilityFragment>
               </nav>
             </>
@@ -137,6 +99,7 @@ export const VerticalNavigation = ({ children }: VerticalNavigationProps) => {
                 iconButton
                 onClick={() => setNavExpanded(!navExpanded)}
                 subtle
+                className="expand-button"
               >
                 {navExpanded ? (
                   <VisaMediaRewindTiny rtl />
@@ -147,7 +110,7 @@ export const VerticalNavigation = ({ children }: VerticalNavigationProps) => {
             </UtilityFragment>
           </Utility>
         </Nav>
-        <Utility className={Styles.mainContent}>{children}</Utility>
+        <Utility className="mainContent">{children}</Utility>
       </div>
     </div>
   );

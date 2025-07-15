@@ -1,11 +1,12 @@
 .code-block {
   font-size: 14px;
-  background-color: #2a2a2b;
+  background-color: rgb(40, 42, 54);
   color: #f8f8f2;
   overflow-x: auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  position: relative;
 
   button {
     padding: 0;
@@ -21,9 +22,8 @@
     }
   }
   .copy-icon {
-    display: flex;
-    gap: 10px;
-
+    position: absolute;
+    right: 48px;
     span {
       color: rgb(252, 233, 30);
     }

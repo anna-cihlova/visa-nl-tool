@@ -6,6 +6,13 @@
   min-block-size: 700px;
   display: grid;
   grid-template-columns: auto 1fr;
+  @media (max-width: 839px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    .expand-button {
+      rotate: 90deg;
+    }
+  }
 }
 
 .mainContent {
@@ -17,5 +24,15 @@
 }
 
 .navigation {
-  background-color: lightgrey;
+  background-color: #dde3fa;
+  min-width: 220px;
+}
+
+.link-logo {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  align-items: center;
 }
