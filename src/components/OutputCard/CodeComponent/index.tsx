@@ -5,8 +5,16 @@ import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-export const CodeComponent = ({ components, codeSnippet }: any) => {
-  const [copied, setCopied] = useState(Boolean);
+type CodeComponentProps = {
+  components: { title: string; code: string }[];
+  codeSnippet: string;
+};
+
+export const CodeComponent = ({
+  components,
+  codeSnippet,
+}: CodeComponentProps) => {
+  const [copied, setCopied] = useState(false);
 
   return (
     <div>
