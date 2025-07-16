@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Visa UI Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! I’m Anna — and I built this React app to help developers quickly turn UI prompts into ready-to-copy code using the Visa Nova Design System. Just type a description like “Login form with remember me,” and you’ll get suggested components and a generated code snippet you can customize, copy, or save for later.
 
-## Available Scripts
+## ✨ My Approach
 
-In the project directory, you can run:
+This project was built using:
 
-### `npm start`
+- React + TypeScript for structure and reusability
+- SCSS for styling
+- Visa Nova Design System for consistent UI components
+- Node.js + Express to create a simple mock API that feeds component data into the app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I focused on clean UX, accessibility, and helpful developer tools.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🔑 Key Features
 
-### `npm test`
+1. Smart Component Suggestions
+   Type a short UI prompt (e.g., “login form with remember me”) and the app suggests the most relevant UI with components included using a keyword-based scoring system (the most relevant UI components are shown based on the prompt).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Interactive Component Selection
+   I added this as a unique feature: developers can select or deselect any suggested component to customize the output. This updates the generated code in real time, giving users full control based on their preferences.
 
-### `npm run build`
+3. Code Snippet Generator
+   Developers can save the UI snippet based on the selected components. They can also easily copy it to the clipboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Saved Snippets Sidebar
+   Saved snippets can be accessed anytime from the vertical sidebar navigation. Each saved snippet can be reopened, copied again, or deleted.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. First-Time Onboarding Panel
+   A collapsible panel introduces new users to the app and explains each step clearly — from describing a prompt to saving snippets.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Accessibility
+   Accessibility has always been a key consideration for me—I included ARIA labels, hidden labels for visual clarity, and ensured compatibility with screen readers to support a wider range of users.
 
-### `npm run eject`
+7. Clean & Responsive UI
+   The app is styled with SCSS and built using Visa’s Nova Design System, making the layout feel clean, intuitive, and easy to use on any screen size.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ⏳ If I Had More Time...
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Use AI to better understand free-text prompts; the app could become smarter and more intuitive by understanding synonyms, phrasing, and intent.
+- Nest the generated code more logically (e.g., wrap elements, add meaningful labels), and let users edit the generated code before copying.
+  That could be achieved by adding a live preview of the generated UI (like CodeSandbox).
+- Add deeper customization with Nova theming to give the app a more unique visual identity
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I had a great time building this web app. It was a rewarding learning experience where I developed the entire project step by step, growing along the way. Whenever I felt unsure, I turned to ChatGPT for a helpful nudge — whether it was setting up my very first Node.js + Express mock server, untangling tricky TypeScript issues, or improving how I organized and structured my code.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I also really enjoyed working with the Visa Product Design System. I spent time exploring the documentation to make sure I understood the system and applied it properly. I hope that’s reflected in the finished app!
 
-## Learn More
+## 🚀 Running the App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### To run it locally:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone https://github.com/your-username/ui-generator.git
+cd ui-generator
+npm install
+npm run start
+```
+
+Then, in another terminal:
+
+```
+node mock-server.js
+```
+
+## 🌐 Deployed Version
+
+View it live on Vercel: https://ui-generator.vercel.app
+
+## 👩‍💻 About Me
+
+Created by Anna Cihlova
+Frontend Developer
