@@ -8,7 +8,18 @@ import {
 } from "@visa/nova-react";
 import { VisaChevronRightTiny, VisaSaveTiny } from "@visa/nova-icons-react";
 import { SuggestedComponents } from "./SuggestedComponents";
-import { CodeComponent } from "./CodeComponent";
+import { CodeComponent } from "../CodeComponent";
+
+type OutputCardProps = {
+  setSuggestedComponents: React.Dispatch<React.SetStateAction<string[]>>;
+  suggestedComponents: string[];
+  selectedComponents: string[];
+  setSelectedComponents: React.Dispatch<React.SetStateAction<string[]>>;
+  setCodeSnippet: (code: string) => void;
+  generateCode: (components: string[]) => string;
+  codeSnippet: string;
+  handleSave: () => void;
+};
 
 export const OutputCard = ({
   setSuggestedComponents,
@@ -19,7 +30,7 @@ export const OutputCard = ({
   generateCode,
   codeSnippet,
   handleSave,
-}: any) => {
+}: OutputCardProps) => {
   return (
     <ContentCard>
       <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
@@ -35,10 +46,7 @@ export const OutputCard = ({
             <Typography variant="headline-2" className="headline-2">
               Generated Code
             </Typography>
-            <CodeComponent
-              components={suggestedComponents}
-              codeSnippet={codeSnippet}
-            />
+            <CodeComponent codeSnippet={codeSnippet} />
           </div>
           <Utility className="next-steps">
             <Button colorScheme="secondary" onClick={handleSave}>

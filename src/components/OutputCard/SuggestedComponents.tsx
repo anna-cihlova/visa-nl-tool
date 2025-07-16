@@ -1,14 +1,30 @@
 import "./styles.scss";
 import { Checkbox, Chip, Typography, Utility } from "@visa/nova-react";
 
+type SuggestedComponentsProps = {
+  suggestedComponents: string[];
+  selectedComponents: string[];
+  setSelectedComponents: React.Dispatch<React.SetStateAction<string[]>>;
+  setCodeSnippet: (code: string) => void;
+  generateCode: (components: string[]) => string;
+};
+
 export const SuggestedComponents = ({
   suggestedComponents,
   selectedComponents,
   setSelectedComponents,
   setCodeSnippet,
   generateCode,
-}: any) => {
+}: SuggestedComponentsProps) => {
   const id = "selection-group-chip";
+
+  const handleComponentToggle = (comp: string) => {
+    const updatedSelection = selectedComponents.includes(comp)
+      ? selectedComponents.filter((c) => c !== comp)
+      : [...selectedComponents, comp];
+    setSelectedComponents(updatedSelection);
+    setCodeSnippet(generateCode(updatedSelection));
+  };
 
   return (
     <div>
@@ -23,13 +39,7 @@ export const SuggestedComponents = ({
               htmlFor={`${id}-${i}`}
               key={`${id}-${i}`}
               tag="label"
-              onChange={() => {
-                const updatedSelection = selectedComponents.includes(comp)
-                  ? selectedComponents.filter((c: string) => c !== comp)
-                  : [...selectedComponents, comp];
-                setSelectedComponents(updatedSelection);
-                setCodeSnippet(generateCode(updatedSelection));
-              }}
+              onChange={() => handleComponentToggle(comp)}
               checked={selectedComponents.includes(comp)}
             >
               <span>{comp}</span>

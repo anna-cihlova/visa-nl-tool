@@ -9,7 +9,7 @@ import {
   UtilityFragment,
 } from "@visa/nova-react";
 import { CSSProperties, useState } from "react";
-import { CodeComponent } from "../../OutputCard/CodeComponent";
+import { CodeComponent } from "../CodeComponent";
 import { VisaDeleteTiny } from "@visa/nova-icons-react";
 
 type AccordionGroupProps = {
@@ -34,7 +34,6 @@ export const AccordionGroup = ({
                 colorScheme="tertiary"
                 onClick={(event) => {
                   event.preventDefault();
-                  // If open, close accordion, else open accordion
                   setOpenIndex(openIndex === index ? -1 : index);
                 }}
                 style={
@@ -49,7 +48,7 @@ export const AccordionGroup = ({
                 {title}
                 <Button
                   onClick={() => handleDelete(index)}
-                  aria-label="Delete"
+                  aria-label="Delete UI"
                   className="delete-button"
                 >
                   <VisaDeleteTiny />
@@ -66,7 +65,7 @@ export const AccordionGroup = ({
                   } as CSSProperties
                 }
               >
-                <CodeComponent components={savedSnippets} codeSnippet={code} />
+                <CodeComponent codeSnippet={code} />
               </AccordionPanel>
             </UtilityFragment>
           </Accordion>

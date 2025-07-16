@@ -69,6 +69,13 @@ export const VerticalNavigation = ({
                 </div>
               </UtilityFragment>
               <nav aria-label={navRegionAriaLabel}>
+                <Typography
+                  variant="subtitle-2"
+                  className="visually-hidden"
+                  tag="h2"
+                >
+                  Saved UI Snippets
+                </Typography>
                 <UtilityFragment vGap={8}>
                   <AccordionGroup
                     savedSnippets={savedSnippets}
@@ -92,7 +99,7 @@ export const VerticalNavigation = ({
             >
               <Button
                 aria-label="Side bar"
-                aria-expanded={!!navExpanded}
+                aria-expanded={navExpanded}
                 buttonSize="small"
                 colorScheme="tertiary"
                 iconButton

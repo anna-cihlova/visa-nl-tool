@@ -28,7 +28,6 @@ function App() {
   );
 
   // Fetch Mock Metadata from Local Mock Server
-  // mock-server.js
   useEffect(() => {
     try {
       const fetchData = async function () {
@@ -71,7 +70,6 @@ function App() {
       }))
       .filter((meta) => meta.score > 0)
       .sort((a, b) => b.score - a.score);
-    // Render Component
     const matched = sorted[0]?.components || ["Container", "Heading", "Text"];
     setSuggestedComponents(matched);
     setSelectedComponents(matched);
@@ -118,8 +116,8 @@ function App() {
               selectedComponents={selectedComponents}
               setSelectedComponents={setSelectedComponents}
               setCodeSnippet={setCodeSnippet}
-              generateCode={generateCode}
               codeSnippet={codeSnippet}
+              generateCode={generateCode}
               handleSave={handleSave}
             />
           )}
