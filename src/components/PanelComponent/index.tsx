@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   VisaMediaFastForwardTiny,
   VisaMediaRewindTiny,
@@ -16,9 +16,15 @@ import {
 } from "@visa/nova-react";
 
 export const PanelComponent = () => {
-  const [open, setOpen] = useState(() => {
-    return !localStorage.getItem("onboardingComplete");
-  });
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenOnboarding = localStorage.getItem("onboardingComplete");
+    if (!hasSeenOnboarding) {
+      setOpen(true);
+      localStorage.setItem("onboardingComplete", "true");
+    }
+  }, []);
 
   return (
     <Utility vFlex className="panel-wrapper">
@@ -30,8 +36,7 @@ export const PanelComponent = () => {
           iconButton
           iconTwoColor
           onClick={() => {
-            localStorage.setItem("onboardingComplete", "true");
-            setOpen(open ? false : true);
+            setOpen(!open);
           }}
         >
           {open ? (
