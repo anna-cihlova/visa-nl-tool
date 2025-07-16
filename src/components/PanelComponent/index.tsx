@@ -43,7 +43,7 @@ export const PanelComponent = () => {
       </UtilityFragment>
 
       {open && (
-        <Panel expandable style={{ minInlineSize: "400px" }}>
+        <Panel expandable className="panel-container">
           <PanelContent>
             <PanelHeader>
               <Typography

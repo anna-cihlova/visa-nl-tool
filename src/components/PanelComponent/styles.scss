@@ -3,6 +3,12 @@
   right: 0;
   top: 2%;
   z-index: 1000;
+  .panel-container {
+    min-inline-size: 400px;
+    @media (max-width: 839px) {
+      min-inline-size: 70%;
+    }
+  }
   li {
     margin-bottom: 10px;
   }
