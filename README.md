@@ -68,7 +68,7 @@ node mock-server.js
 
 ## 🌐 Deployed Version
 
-View it live on Vercel: https://ui-generator.vercel.app
+View it live on Vercel: [https://visa-nl-tool.vercel.app](https://visa-nl-tool.vercel.app/)
 
 ## 👩‍💻 About Me
 
