@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { Typography } from "@visa/nova-react";
-import { InputCard, OutputCard, VerticalNavigation } from "./components/index";
+import {
+  InputCard,
+  OutputCard,
+  VerticalNavigation,
+  PanelComponent,
+} from "./components/index";
 
 type Snippet = {
   title: string;
@@ -101,6 +106,7 @@ function App() {
         handleDelete={handleDelete}
       >
         <div className="main-content">
+          <PanelComponent />
           <Typography variant="headline-1" className="headline-1">
             Write it. Generate it. Copy it. Implement it. 🧑‍💻
           </Typography>
